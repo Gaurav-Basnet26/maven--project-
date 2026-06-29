@@ -48,7 +48,7 @@ archiveArtifacts artifacts: '*/*/*.war', followSymlinks: false, onlyIfSuccessful
         echo 'DockerImage'
          sh '''
             /usr/local/bin/docker --version
-            /usr/local/bin/docker image build -t gaurav0426/java-app:$BUILD NUMBER .
+            /usr/local/bin/docker image build -t gaurav0426/java-app:${BUILD_NUMBER} .
         '''
     }
 }
