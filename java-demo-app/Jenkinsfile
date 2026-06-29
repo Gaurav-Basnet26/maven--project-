@@ -46,7 +46,10 @@ archiveArtifacts artifacts: '*/*/*.war', followSymlinks: false, onlyIfSuccessful
         stage('Build docker image') {
     steps {
         echo 'DockerImage'
-        sh 'docker image build -t registry.local/java-app:v1 .'
+         sh '''
+            /usr/local/bin/docker --version
+            /usr/local/bin/docker image build -t registry.local/java-app:v1 .
+        '''
     }
 }
 	stage('PushImage') {
