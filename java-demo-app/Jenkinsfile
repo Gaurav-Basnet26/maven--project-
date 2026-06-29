@@ -1,5 +1,9 @@
 pipeline {
     agent any
+   
+    environment {
+        PATH = "/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    }
 
     stages {
         stage('Compile') {
