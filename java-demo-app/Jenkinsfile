@@ -43,13 +43,13 @@ archiveArtifacts artifacts: '*/*/*.war', followSymlinks: false, onlyIfSuccessful
 		sh 'mvn package -f java-demo-app/pom.xml'
             }
         }
-	stage('Build docker image'){
-	step {
-		echo'DockerImage'
-		sh 'docker image build -t registry.local/java-app:v1 .'
+        stage('Build docker image') {
+    steps {
+        echo 'DockerImage'
+        sh 'docker image build -t registry.local/java-app:v1 .'
+    }
 }
-}
-        stage('PushImage') {
+	stage('PushImage') {
             steps {
                 echo 'Push image to registry'
             }
