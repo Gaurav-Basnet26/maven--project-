@@ -9,7 +9,7 @@ pipeline {
         stage('Compile') {
             steps {
                 echo 'Compile code'
-                sh 'mvn compile Dskip test -f java-demo-app/pom.xml'
+                sh 'mvn clean install -DskipTests -f java-demo-app/pom.xml'
             }
         }
 
