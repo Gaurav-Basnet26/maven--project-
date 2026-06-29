@@ -35,7 +35,7 @@ pipeline {
         stage('BuildApp') {
             steps {
                 echo 'Creating docker image'
-		sh 'mvn package -f java-demo-app/pom.xml
+		sh 'mvn package -f java-demo-app/pom.xml'
             }
         }
 
